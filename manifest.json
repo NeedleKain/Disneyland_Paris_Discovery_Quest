@@ -1,0 +1,21 @@
+{
+  "short_name": "Discovery Quest",
+  "name": "Disneyland Paris - Discovery Quest",
+  "icons": [
+    {
+      "src": "./icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "./icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#4f46e5",
+  "background_color": "#000000",
+  "description": "Une application de jeu d'orientation immersive pour Disneyland Paris."
+}
