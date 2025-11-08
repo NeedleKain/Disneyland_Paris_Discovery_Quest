@@ -1,11 +1,5 @@
 import type { ReactNode } from 'react';
 
-// FIX: Added Coordinates interface for geolocation.
-export interface Coordinates {
-  latitude: number;
-  longitude: number;
-}
-
 export interface MiniGame {
   id: 'sineWave' | 'pipeGrid' | 'binarySequence';
   title: string;
@@ -16,8 +10,6 @@ export interface Riddle {
   id: number;
   question: string;
   answer: string;
-  // FIX: Added location property for geolocation checks.
-  location: Coordinates;
   locationName: string;
   hint: string;
   image: string;
@@ -57,4 +49,10 @@ export interface Park {
   description: string;
   lands: Land[];
   grandQuest?: Quest;
+}
+
+// FIX: Add Coordinates interface for geolocation data.
+export interface Coordinates {
+  latitude: number;
+  longitude: number;
 }

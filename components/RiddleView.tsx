@@ -4,6 +4,7 @@ import type { Riddle } from '../types.ts';
 import { SparkleIcon } from './icons/SparkleIcon.tsx';
 import { LightbulbIcon } from './icons/LightbulbIcon.tsx';
 
+
 interface RiddleViewProps {
   riddle: Riddle;
   onCorrect: () => void;
@@ -13,7 +14,7 @@ interface RiddleViewProps {
   };
 }
 
-const RiddleView = ({ riddle, onCorrect, progress }: RiddleViewProps) => {
+const RiddleView: React.FC<RiddleViewProps> = ({ riddle, onCorrect, progress }) => {
   const [answer, setAnswer] = useState('');
   const [feedback, setFeedback] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
@@ -82,7 +83,7 @@ const RiddleView = ({ riddle, onCorrect, progress }: RiddleViewProps) => {
         </div>
       </div>
 
-      <p className="text-xl md:text-2xl text-center leading-relaxed mb-6" style={{ color: 'var(--text-color)'}}>
+      <p className="text-xl md:text-2xl text-center leading-relaxed mb-4" style={{ color: 'var(--text-color)'}}>
         {riddle.question}
       </p>
 
@@ -107,7 +108,8 @@ const RiddleView = ({ riddle, onCorrect, progress }: RiddleViewProps) => {
             value={answer}
             onChange={(e) => setAnswer(e.target.value)}
             placeholder="Votre réponse..."
-            className="w-full bg-black/20 border-2 rounded-lg p-3 placeholder-gray-400 focus:outline-none focus:ring-2 transition-all duration-300 mb-4"
+            disabled={isVerifying}
+            className="w-full bg-black/20 border-2 rounded-lg p-3 placeholder-gray-400 focus:outline-none focus:ring-2 transition-all duration-300 mb-4 disabled:opacity-60"
             style={{ borderColor: 'var(--primary-color)', color: 'var(--text-color)', '--tw-ring-color': 'var(--accent-color)' } as React.CSSProperties}
           />
           <button
@@ -141,7 +143,7 @@ const RiddleView = ({ riddle, onCorrect, progress }: RiddleViewProps) => {
           className={`flex-1 flex items-center justify-center gap-2 bg-transparent border-2 border-cyan-400 text-cyan-400 hover:bg-cyan-400 hover:text-indigo-900 font-semibold py-2 px-4 rounded-lg transition-colors duration-300 disabled:opacity-50 ${!isGeneratingImage ? 'animate-magic-pulse' : ''}`}
         >
           <SparkleIcon />
-          {isGeneratingImage ? 'Création...' : 'Indice Visuel Magique'}
+          {isGeneratingImage ? 'Création...' : 'Indice Magique'}
         </button>
       </div>
       
@@ -165,4 +167,4 @@ const RiddleView = ({ riddle, onCorrect, progress }: RiddleViewProps) => {
   );
 };
 
-export default RiddleView;
+export default React.memo(RiddleView);

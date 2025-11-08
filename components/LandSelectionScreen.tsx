@@ -10,7 +10,7 @@ interface LandSelectionScreenProps {
   onBack: () => void;
 }
 
-const LandSelectionScreen = ({ park, onSelectLand, onSelectQuest, onBack }: LandSelectionScreenProps) => {
+const LandSelectionScreen: React.FC<LandSelectionScreenProps> = ({ park, onSelectLand, onSelectQuest, onBack }) => {
   return (
     <div className="text-center p-6 md:p-8 rounded-2xl magic-container">
       <button 
@@ -62,4 +62,4 @@ const LandSelectionScreen = ({ park, onSelectLand, onSelectQuest, onBack }: Land
   );
 };
 
-export default LandSelectionScreen;
+export default React.memo(LandSelectionScreen);

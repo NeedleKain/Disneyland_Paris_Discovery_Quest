@@ -6,7 +6,7 @@ interface ParkSelectionScreenProps {
   onSelectPark: (park: Park) => void;
 }
 
-const ParkSelectionScreen = ({ parks, onSelectPark }: ParkSelectionScreenProps) => {
+const ParkSelectionScreen: React.FC<ParkSelectionScreenProps> = ({ parks, onSelectPark }) => {
   return (
     <div className="text-center p-8 rounded-2xl magic-container">
       <h1 className="text-4xl md:text-5xl font-bold text-yellow-300 mb-4 tracking-wider">Choisissez votre Parc</h1>
@@ -31,4 +31,4 @@ const ParkSelectionScreen = ({ parks, onSelectPark }: ParkSelectionScreenProps) 
   );
 };
 
-export default ParkSelectionScreen;
+export default React.memo(ParkSelectionScreen);

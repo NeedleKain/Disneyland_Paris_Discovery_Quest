@@ -13,9 +13,6 @@ import { CompassIcon } from './components/icons/CompassIcon.tsx';
 import { HotelIcon } from './components/icons/lands/HotelIcon.tsx';
 import { SpiderBotIcon } from './components/icons/lands/SpiderBotIcon.tsx';
 
-// FIX: Added ACCEPTANCE_RADIUS_METERS for geolocation checks.
-export const ACCEPTANCE_RADIUS_METERS = 50; // in meters
-
 export const PARKS: Park[] = [
   {
     id: 'dlp',
@@ -32,7 +29,6 @@ export const PARKS: Park[] = [
           id: 101,
           question: "L'aventure commence là où le temps s'arrête et où les pères fondateurs veillent. Cherchez le nom de 'Card Walker' sur une fenêtre, lui qui a guidé la compagnie après le second frère. C'est le point de départ de tous les voyages.",
           answer: "Main Street, U.S.A.",
-          location: { latitude: 48.8719, longitude: 2.7785 },
           locationName: "Fenêtre de Card Walker, Main Street",
           hint: "Levez les yeux sur les fenêtres au-dessus de l'Emporium.",
           image: './mainstreet1.jpg'
@@ -41,7 +37,6 @@ export const PARKS: Park[] = [
           id: 102,
           question: "Votre prochaine étape vous mène vers l'ouest sauvage. Là où la terre tremble et où un train fou dévale la montagne maudite, trouvez la demeure du patriarche, Henry Ravenswood, dont la fiancée attend toujours.",
           answer: "Phantom Manor",
-          location: { latitude: 48.8719, longitude: 2.7745 },
           locationName: "Phantom Manor",
           hint: "Cherchez le grand manoir qui surplombe la rivière à Frontierland.",
           image: './frontierland1.jpg'
@@ -50,7 +45,6 @@ export const PARKS: Park[] = [
           id: 103,
           question: "Fuyez les fantômes et mettez le cap sur l'exotisme ! Là où les boutres se balancent doucement, trouvez le passage secret qui mène au trésor du Capitaine Barbossa, une caverne remplie de pièces d'or maudites.",
           answer: "Le Passage Enchanté d'Aladdin", // Correct answer for a different riddle, but let's keep it for variety. The hint points elsewhere.
-          location: { latitude: 48.8732, longitude: 2.7753 },
           locationName: "Adventure Isle / Le Trésor de Barbossa",
           hint: "Explorez les grottes près du galion pirate à Adventureland.",
           image: './adventureland2.jpg'
@@ -59,7 +53,6 @@ export const PARKS: Park[] = [
           id: 104,
           question: "Après l'or, la gloire. Voyagez vers le futur tel que vu du passé. Tenez-vous au pied du Columbiad, le canon qui a lancé des hommes vers la Lune, et sentez la puissance qui propulse les voyageurs vers les étoiles.",
           answer: "Hyperspace Mountain",
-          location: { latitude: 48.8760, longitude: 2.7798 },
           locationName: "Star Wars Hyperspace Mountain",
           hint: "Le grand canon bleu et or de Discoveryland.",
           image: './discoveryland1.jpg'
@@ -68,7 +61,6 @@ export const PARKS: Park[] = [
           id: 105,
           question: "Pour finir, retournez au cœur du mythe. Sous le symbole même du parc, une bête de légende dort d'un sommeil agité. Affrontez son regard et vous aurez trouvé le Gardien du Secret, la clé de voûte de ce royaume.",
           answer: "La Tanière du Dragon",
-          location: { latitude: 48.8729, longitude: 2.7766 },
           locationName: "La Tanière du Dragon",
           hint: "Descendez dans les souterrains du Château de la Belle au Bois Dormant.",
           image: './fantasyland3.jpg'
@@ -99,7 +91,6 @@ export const PARKS: Park[] = [
                 id: 1,
                 question: "Je suis le premier acte et le dernier salut. Mes horloges sont trompeuses, car ici le temps s'arrête. Trouvez le bâtiment qui vous souhaite la bienvenue et vous dit au revoir.",
                 answer: "Main Street Station",
-                location: { latitude: 48.8714, longitude: 2.7794 },
                 locationName: "La gare de Main Street",
                 hint: "C'est le premier bâtiment que vous traversez pour entrer dans le parc.",
                 image: './mainstreet2.jpg'
@@ -108,7 +99,6 @@ export const PARKS: Park[] = [
                 id: 2,
                 question: "À l'angle de la rue, une lumière brille toujours, même la nuit. Cherchez le nom de l'inventeur qui a illuminé le monde, son nom est gravé là où l'on vend des douceurs.",
                 answer: "Cable Car Bake Shop",
-                location: { latitude: 48.8722, longitude: 2.7779 },
                 locationName: "Cable Car Bake Shop / Hommage à Edison",
                 hint: "Son nom de famille est Edison.",
                 image: './mainstreet3.jpg'
@@ -140,7 +130,6 @@ export const PARKS: Park[] = [
                 id: 201,
                 question: "Ma voix résonne sur le lac, mais je ne suis pas un homme. Je transporte les pionniers vers de nouvelles aventures. Qui suis-je ?",
                 answer: "Molly Brown",
-                location: { latitude: 48.8722, longitude: 2.7738 },
                 locationName: "Thunder Mesa Riverboat Landing",
                 hint: "Je suis un grand bateau à aubes.",
                 image: './frontierland2.jpg'
@@ -172,7 +161,6 @@ export const PARKS: Park[] = [
                 id: 301,
                 question: "Je suis un crâne bavard qui garde l'entrée d'une forteresse où l'or est maudit. Qui suis-je ?",
                 answer: "Pirates of the Caribbean",
-                location: { latitude: 48.8736, longitude: 2.7750 },
                 locationName: "Attraction Pirates of the Caribbean",
                 hint: "Cherchez la tête de mort au-dessus de l'entrée de l'attraction.",
                 image: './adventureland1.jpg'
@@ -204,7 +192,6 @@ export const PARKS: Park[] = [
                 id: 401,
                 question: "Je suis un labyrinthe curieux où perdre la tête est un jeu d'enfant. Qui règne sur ce dédale ?",
                 answer: "La Reine de Coeur",
-                location: { latitude: 48.8741, longitude: 2.7770 },
                 locationName: "Alice's Curious Labyrinth",
                 hint: "Attention à ne pas faire rougir la souveraine de colère.",
                 image: './fantasyland1.jpg'
@@ -236,7 +223,6 @@ export const PARKS: Park[] = [
                 id: 501,
                 question: "Je suis le vaisseau le plus rapide de la galaxie, mais ici, je sers de guide vers une autre aventure. Trouvez le X-Wing qui monte la garde.",
                 answer: "Star Tours",
-                location: { latitude: 48.8753, longitude: 2.7808 },
                 locationName: "Star Tours: L'Aventure Continue",
                 hint: "Il est posté juste à l'entrée de l'attraction.",
                 image: './discoveryland2.jpg'
@@ -277,7 +263,6 @@ export const PARKS: Park[] = [
                 question: "Recrue ! C'est Peter Parker ! J'ai un énorme problème : un virus inconnu a infecté mes Spider-Bots et ils sèment le chaos ! J'ai besoin de votre aide pour réinitialiser les trois serveurs de mémoire que j'ai cachés. Le premier boîtier est dissimulé à la première ligne de défense du campus, qui sert de passage dans le Multivers.",
                 answer: "Port d'Accès",
                 options: ["Port d'Accès", "QG", "Training Center"],
-                location: { latitude: 48.8687, longitude: 2.7818 },
                 locationName: "Port d'Accès - Avengers Campus",
                 hint: "C'est par ici que vous entrez dans la zone des Avengers.",
                 image: './avengers1.jpg',
@@ -292,7 +277,6 @@ export const PARKS: Park[] = [
                 question: "Incroyable, vous avez trouvé le serveur primaire ! Vous êtes doué ! Le deuxième boîtier se trouve là où les membres du W.E.B. rechargent leurs batteries. Cherchez le lieu où la nourriture est 'fabriquée' par des ingénieurs plutôt que par des chefs.",
                 answer: "Food Truck W.E.B.",
                 options: ["Pym Kitchen", "Food Truck W.E.B.", "Stark Factory"],
-                location: { latitude: 48.8680, longitude: 2.7810 },
                 locationName: "Food Truck W.E.B.",
                 hint: "Ce n'est pas un grand restaurant, mais plutôt un stand mobile.",
                 image: './avengers2.jpg',
@@ -307,7 +291,6 @@ export const PARKS: Park[] = [
                 question: "Génial ! Serveur secondaire réinitialisé ! Plus qu'un seul. Le dernier boîtier est caché dans l'atelier le plus innovant du Campus. C'est là que de jeunes génies sont formés pour inventer des technologies, et que leur plus petite création (le Spider-Bot) peut devenir la plus grande des menaces.",
                 answer: "W.E.B. Adventure",
                 options: ["Training Center", "Stark Factory", "W.E.B. Adventure"],
-                location: { latitude: 48.8678, longitude: 2.7812 },
                 locationName: "W.E.B. Adventure",
                 hint: "L'attraction où l'on peut lancer des toiles comme Spider-Man.",
                 image: './avengers3.jpg',
@@ -344,7 +327,6 @@ export const PARKS: Park[] = [
                 id: 801,
                 question: "Je suis un rat gourmet qui rêve de devenir un grand chef. Où se trouve mon restaurant parisien ?",
                 answer: "Bistot Chez Rémy",
-                location: { latitude: 48.8693, longitude: 2.7800 },
                 locationName: "Bistot Chez Rémy",
                 hint: "Cherchez la grande enseigne près de l'attraction Ratatouille.",
                 image: './pixar1.jpg'

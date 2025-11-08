@@ -4,7 +4,7 @@ interface WelcomeScreenProps {
   onStart: () => void;
 }
 
-const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
+const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
   return (
     <div className="text-center p-8 rounded-2xl magic-container">
       <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-wider" style={{ color: 'var(--accent-color)'}}>Disneyland Paris - Discovery Quest</h1>
@@ -12,7 +12,7 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
         Bienvenue, aventurier ! Une série d'énigmes vous attend au cœur de la magie.
       </p>
       <p className="mb-8" style={{ color: 'var(--text-color)' }}>
-        Explorez les parcs pour découvrir les indices. Vous pouvez répondre aux énigmes où que vous soyez, mais l'aventure est plus magique sur place ! Utilisez la carte pour vous guider.
+        Explorez les parcs pour découvrir les indices. L'aventure est plus magique sur place, mais vous pouvez répondre où que vous soyez !
       </p>
       <button
         onClick={onStart}
@@ -29,4 +29,4 @@ const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
   );
 };
 
-export default WelcomeScreen;
+export default React.memo(WelcomeScreen);

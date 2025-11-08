@@ -8,7 +8,7 @@ interface MapComponentProps {
   riddleLocationName: string;
 }
 
-const RecenterAutomatically = ({ userPosition, riddleLocation }: { userPosition: Coordinates, riddleLocation: Coordinates }) => {
+const RecenterAutomatically: React.FC<{ userPosition: Coordinates, riddleLocation: Coordinates }> = ({ userPosition, riddleLocation }) => {
   const map = useMap();
   useEffect(() => {
     map.fitBounds([
@@ -19,7 +19,7 @@ const RecenterAutomatically = ({ userPosition, riddleLocation }: { userPosition:
   return null;
 };
 
-const MapComponent = ({ userPosition, riddleLocation, riddleLocationName }: MapComponentProps) => {
+const MapComponent: React.FC<MapComponentProps> = ({ userPosition, riddleLocation, riddleLocationName }) => {
   const userLatLng: [number, number] = [userPosition.latitude, userPosition.longitude];
   const riddleLatLng: [number, number] = [riddleLocation.latitude, riddleLocation.longitude];
 

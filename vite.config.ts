@@ -11,27 +11,8 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: 'autoUpdate',
-      includeAssets: ['background.jpg', 'icon-192x192.png', 'icon-512x512.png'],
-      manifest: {
-        name: 'Disneyland Paris - Discovery Quest',
-        short_name: 'Discovery Quest',
-        description: "Une application de jeu d'orientation immersive pour Disneyland Paris. Résolvez des énigmes complexes en explorant le parc pour découvrir des trésors cachés et des secrets magiques.",
-        theme_color: '#4f46e5',
-        background_color: '#000000',
-        display: 'standalone',
-        icons: [
-          {
-            src: 'icon-192x192.png',
-            sizes: '192x192',
-            type: 'image/png'
-          },
-          {
-            src: 'icon-512x512.png',
-            sizes: '512x512',
-            type: 'image/png'
-          }
-        ]
-      }
+      // Le plugin utilisera automatiquement 'manifest.json' à la racine.
+      // Inutile de le redéfinir ici.
     })
   ],
 })
