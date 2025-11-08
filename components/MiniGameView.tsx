@@ -436,7 +436,7 @@ interface MiniGameViewProps {
   onComplete: () => void;
 }
 
-const MiniGameView: React.FC<MiniGameViewProps> = ({ miniGame, onComplete }) => {
+const MiniGameView = ({ miniGame, onComplete }: MiniGameViewProps) => {
     const renderMiniGame = () => {
         switch (miniGame.id) {
             case 'sineWave':
@@ -459,4 +459,4 @@ const MiniGameView: React.FC<MiniGameViewProps> = ({ miniGame, onComplete }) => 
     );
 };
 
-export default React.memo(MiniGameView);
+export default MiniGameView;

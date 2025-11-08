@@ -13,7 +13,7 @@ interface RiddleViewProps {
   };
 }
 
-const RiddleView: React.FC<RiddleViewProps> = ({ riddle, onCorrect, progress }) => {
+const RiddleView = ({ riddle, onCorrect, progress }: RiddleViewProps) => {
   const [answer, setAnswer] = useState('');
   const [feedback, setFeedback] = useState('');
   const [isVerifying, setIsVerifying] = useState(false);
@@ -165,4 +165,4 @@ const RiddleView: React.FC<RiddleViewProps> = ({ riddle, onCorrect, progress }) 
   );
 };
 
-export default React.memo(RiddleView);
+export default RiddleView;

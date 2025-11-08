@@ -4,7 +4,7 @@ interface WelcomeScreenProps {
   onStart: () => void;
 }
 
-const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
+const WelcomeScreen = ({ onStart }: WelcomeScreenProps) => {
   return (
     <div className="text-center p-8 rounded-2xl magic-container">
       <h1 className="text-4xl md:text-5xl font-bold mb-4 tracking-wider" style={{ color: 'var(--accent-color)'}}>Disneyland Paris - Discovery Quest</h1>
@@ -29,4 +29,4 @@ const WelcomeScreen: React.FC<WelcomeScreenProps> = ({ onStart }) => {
   );
 };
 
-export default React.memo(WelcomeScreen);
+export default WelcomeScreen;

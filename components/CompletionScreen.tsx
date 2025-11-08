@@ -5,7 +5,7 @@ interface CompletionScreenProps {
   message?: string;
 }
 
-const CompletionScreen: React.FC<CompletionScreenProps> = ({ onRestart, message }) => {
+const CompletionScreen = ({ onRestart, message }: CompletionScreenProps) => {
   const completionText = message || "Vous avez résolu toutes les énigmes et découvert les secrets du parc. Votre nom restera gravé dans les légendes du royaume !";
 
   return (
@@ -24,4 +24,4 @@ const CompletionScreen: React.FC<CompletionScreenProps> = ({ onRestart, message 
   );
 };
 
-export default React.memo(CompletionScreen);
+export default CompletionScreen;

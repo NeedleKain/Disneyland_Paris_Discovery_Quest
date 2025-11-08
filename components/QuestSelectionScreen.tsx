@@ -8,7 +8,7 @@ interface QuestSelectionScreenProps {
   onBack: () => void;
 }
 
-const QuestSelectionScreen: React.FC<QuestSelectionScreenProps> = ({ land, onSelectQuest, onBack }) => {
+const QuestSelectionScreen = ({ land, onSelectQuest, onBack }: QuestSelectionScreenProps) => {
   return (
     <div className="text-center p-6 md:p-8 rounded-2xl magic-container">
        <button 
@@ -49,4 +49,4 @@ const QuestSelectionScreen: React.FC<QuestSelectionScreenProps> = ({ land, onSel
   );
 };
 
-export default React.memo(QuestSelectionScreen);
+export default QuestSelectionScreen;

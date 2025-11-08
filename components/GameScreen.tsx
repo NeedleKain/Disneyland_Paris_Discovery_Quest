@@ -13,7 +13,7 @@ interface GameScreenProps {
   onCorrectAnswer: () => void;
 }
 
-const GameScreen: React.FC<GameScreenProps> = ({ quest, onFinish, onBack, currentRiddleIndex, onCorrectAnswer }) => {
+const GameScreen = ({ quest, onFinish, onBack, currentRiddleIndex, onCorrectAnswer }: GameScreenProps) => {
   const isCompleted = currentRiddleIndex >= quest.riddles.length;
   const currentRiddle = quest.riddles[currentRiddleIndex];
 
@@ -74,4 +74,4 @@ const GameScreen: React.FC<GameScreenProps> = ({ quest, onFinish, onBack, curren
   );
 };
 
-export default React.memo(GameScreen);
+export default GameScreen;
